@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1280"
+   height="720"
+   viewBox="0 0 1280 720"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="Cheru_logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.93515625"
+     inkscape:cx="672.0802"
+     inkscape:cy="354.48622"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1432"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="661.92147"
+       y="612.73183"
+       width="533.60067"
+       height="88.755221"
+       id="rect78255" />
+    <rect
+       x="263.05764"
+       y="306.90058"
+       width="794.51963"
+       height="270.54302"
+       id="rect1485" />
+  </defs>
+  <g
+     inkscape:label="圖層 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       id="text1483"
+       style="font-style:normal;font-weight:normal;font-size:192px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1485);fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(1.5475091,-0.46883601,0.45025354,1.5836981,-587.77971,-81.22542)"><tspan
+         x="263.05859"
+         y="494.21289"
+         id="tspan110245"><tspan
+           style="font-family:'jf-openhuninn-1.1';-inkscape-font-specification:'jf-openhuninn-1.1';fill:#ff80b2"
+           id="tspan110239">切嚕</tspan><tspan
+           style="font-family:'jf-openhuninn-1.1';-inkscape-font-specification:'jf-openhuninn-1.1';fill:#ff80b2"
+           id="tspan110241">～</tspan><tspan
+           style="font-family:'jf-openhuninn-1.1';-inkscape-font-specification:'jf-openhuninn-1.1';fill:#ff80b2"
+           id="tspan110243">☆</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text78253"
+       style="font-style:normal;font-weight:normal;font-size:64px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect78255);fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(1.4996519,0,0,1.4996519,-410.50992,-365.27225)"><tspan
+         x="661.92188"
+         y="675.16992"
+         id="tspan110249"><tspan
+           style="font-family:'jf-openhuninn-1.1';-inkscape-font-specification:'jf-openhuninn-1.1, Normal';fill:#800000"
+           id="tspan110247">摩斯電碼轉譯器</tspan></tspan></text>
+  </g>
+</svg>

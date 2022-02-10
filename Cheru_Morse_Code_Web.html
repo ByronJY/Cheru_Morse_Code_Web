@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <title>切嚕摩斯電碼轉譯器</title>
+        <style>
+            #logo_img{
+                width: 35%; margin: auto;
+            }
+            .textbox{
+                width: 80%;
+            }
+            #btn_convert{
+                width:80%;
+                font-size: larger;
+            }
+            .bold{
+                font-weight: bold;
+            }
+            .title{
+                font-weight: bold;
+                font-size: larger;
+            }
+            @media screen and (max-width:600px) {
+                #logo_img{width: 90%;}
+                #btn_convert{width:95%;}
+                .textbox{width:95%;}
+            }
+        </style>
+    </head>
+    <body style="background-color: rgb(255, 232, 236)">
+        <div style="text-align: center;" >
+            <img src="Cheru_logo.png" onclick="logo_down()" id="logo_img"/>
+        </div>
+        
+        <div style="text-align: center; font-size: medium;">
+            <form>
+                <textarea rows = "5" class="textbox" id="text_input" style="background-color: rgb(255, 238, 239)">切嚕嚕嚕嚕哩切嚕哩切嚕嚕切哩切嚕嚕切哩切嚕切切哩切啦切切嚕嚕嚕哩嚕切嚕切哩切嚕哩嚕哩切切切囉</textarea>
+                <input type="button" value="轉換" id="btn_convert" onclick="convert_btn_down()" style="color:white; font-weight: bold; background-color: #ff80b2">
+            </form>
+            <p class="textbox" id="text_convert" style="margin: auto; text-align: left; background-color: pink;">
+                將摩斯電碼的 <span class="bold">「．」定義為「切」，「—」定義為「嚕 」</span>，以實際應用切嚕語。</br>
+                僅支援 <span class="bold">基礎拉丁字母（英文字母）</span> 及 <span class="bold">數字（長碼）</span>。</br>
+                </br>
+                <span class="title">英文轉切嚕：</span>可輸入英文、數字及空格，不可有其他符號。</br>
+                <span class="title">切嚕轉英文：</span>能識別的字只有「切」、「嚕」、「哩」、「啦」、「囉」，不可有任何空格及符號。</br>
+                <span class="title">切嚕碼及意義</span></br>
+                切：．</br>
+                嚕：—</br>
+                哩：字元間的停頓</br>
+                啦：單字間的停頓</br>
+                囉：語畢</br>
+                </br>
+                <span class="title">範例：</span></br>
+                <span class="bold">英文： </span>A PIECE OF CAKE</br>
+                <span class="bold">切嚕： </span>切嚕啦切嚕嚕切哩切切哩切哩嚕切嚕切哩切啦嚕嚕嚕哩切切嚕切啦嚕切嚕切哩切嚕哩嚕切嚕哩切囉</br>
+                </br>
+                <span class="bold">程式可能有問題，但我不想改了。</span>
+            </p>
+        </div>
+    </body>
+
+
+
+    <script languang="javascript">
+        var morse_Alpha = {'A':".-", 'B':"-...", 'C':"-.-.", 'D':"-..", 'E':".", 'F':"..-.", 'G':"--.", 'H':"....", 'I':"..", 'J':".---", 'K':"-.-", 'L':".-..", 'M':"--", 'N':"-.", 'O':"---", 'P':".--.", 'Q':"--.-", 'R':".-.", 'S':"...", 'T':"-", 'U':"..-", 'V':"...-", 'W':".--", 'X':"-..-", 'Y':"-.--", 'Z':"--..", '!':"-.-.--", '?':"..--.."};
+        var morse_Num = {'0':"-----", '1':".----", '2':"..---", '3':"...--", '4':"....-", '5':".....", '6':"-....", '7':"--...", '8':"---..", '9':"----."};
+        var morse_Cheru = {'切':'.', '嚕':'-', '啦':' ', '哩':'|', '囉':'/'};
+        var input_text = document.getElementById("text_input").value;
+        var convert_text = document.getElementById("text_convert");
+        var instruction = document.getElementById("text_convert").innerHTML;
+        var temp_str = "";
+
+        function getKeyByValue(object, value) {
+            return Object.keys(object).find(key => object[key] === value);
+        }
+
+        function Morse2Cheru_func(){
+            for (var j = 0 ; j < temp_str.length ; j++){
+                if (temp_str[j] == '|'){
+                    convert_text.innerHTML += "<span style=\"color: blue\">" + getKeyByValue(morse_Cheru, temp_str[j]) + "</span>";
+                }else if (temp_str[j] == ' '){
+                    convert_text.innerHTML += "<span style=\"color: green\">" + getKeyByValue(morse_Cheru, temp_str[j]) + "</span>";
+                }else if (temp_str[j] == '/'){
+                    convert_text.innerHTML += "<span style=\"color: red\">" + getKeyByValue(morse_Cheru, temp_str[j]) + "</span>";
+                }else{
+                    convert_text.innerHTML += "<span style=\"color: black; font-weight: bold;\">" + getKeyByValue(morse_Cheru, temp_str[j]) + "</span>";
+                }
+                
+            }
+            
+        }
+
+        function Alpha2Morse_func(){
+            for (var i = 0 ; i < input_text.length ; i++){
+                if (input_text[i] == ' '){
+                    temp_str += " ";
+                }else if (input_text[i] in morse_Alpha){
+                    temp_str += morse_Alpha[input_text[i]];
+                }else{
+                    temp_str += morse_Num[input_text[i]];
+                }
+                if (i != input_text.length-1 && input_text[i] != ' ' && input_text[i+1] != ' '){
+                    //temp_str += "<span style=\"color: green;\">|</span>";
+                    temp_str += "|";
+                }else if (input_text[i] != ' ' && input_text[i+1] != ' '){
+                    //temp_str += "<span style=\"color: red;\">/</span>";
+                    temp_str += "/";
+                }
+            }
+            //convert_text.innerHTML = temp_str;
+            Morse2Cheru_func();
+        }
+
+        function Cheru2Morse_func(){
+            var return_str = "";
+            for (var j = 0 ; j < temp_str.length ; j++){
+                return_str += morse_Cheru[temp_str[j]];
+                //console.log();
+            }
+            console.log(return_str in morse_Alpha);
+            if (getKeyByValue(morse_Alpha, return_str)){
+                return getKeyByValue(morse_Alpha, return_str);
+            }else{
+                return getKeyByValue(morse_Num, return_str);
+            }
+            
+            
+        }
+
+        function Cheru2Alpha_func(){
+            for (var i = 0 ; i < input_text.length ; i++){
+                if (input_text[i] == '哩'){
+                    convert_text.innerHTML += Cheru2Morse_func();
+                    temp_str = "";
+                }else if (input_text[i] == '啦'){
+                    convert_text.innerHTML += Cheru2Morse_func();
+                    temp_str = "";
+                    convert_text.innerHTML += ' ';
+                }else if (input_text[i] == '囉'){
+                    convert_text.innerHTML += Cheru2Morse_func();
+                    temp_str = "";
+                }else{
+                    temp_str += input_text[i];
+                }
+            }
+        }
+
+        function convert_btn_down(){
+            input_text = document.getElementById("text_input").value;
+            convert_text.innerHTML = "";
+            temp_str = "";
+            if ((input_text[0] >= 'A' && input_text[0] <= 'Z') || (input_text[0] >= 'a' && input_text[0] <= 'z') || (input_text[0] >= '0' && input_text[0] <= '9')){
+                input_text = input_text.toUpperCase();
+                Alpha2Morse_func(input_text);
+            }else{
+                //convert_text.innerHTML = "False";
+                Cheru2Alpha_func();
+            }
+            
+        }
+
+        function logo_down(){
+            convert_text.innerHTML = instruction;
+        }
+
+        
+    </script>
+</html>
