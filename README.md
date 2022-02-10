@@ -5,18 +5,6 @@
 
 [網頁](https://byronjy.github.io/Cheru_Morse_Code_Web/Cheru_Morse_Code_Web.html?fbclid=IwAR20aFwt58-4mgbQPZZo3-yGXeYFmzOr6YTBpQrMV0TIjsW_H_jHEziSUd0)
 
----
-
-### 切嚕摩斯電碼.py
-摩斯電碼與切嚕語的轉譯。
-
-輸入格式分為兩種：
-* 摩斯轉切嚕：數字鍵盤的「.」（小數點）和「-」（減號），中間不空格
-* 切嚕轉摩斯：「切」和「嚕」，中間不空格
-
----
-
-### 英文切嚕語.py
 以摩斯電碼為基礎的英文與切嚕語轉譯。
 
 僅支援 **基礎拉丁字母（英文字母）** 及 **數字（長碼）**
